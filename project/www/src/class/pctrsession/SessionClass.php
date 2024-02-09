@@ -78,25 +78,6 @@ if (!class_exists('SessionClass')) {
         /**
          * Undocumented function
          *
-         * @return array|null
-         */
-        public function getSession(): array|null {
-            return $_SESSION;
-        }
-
-        /*public function getSession(string|null $key) {
-            if(empty($_SESSION)) {
-                return null;
-            }
-            if(!array_key_exists($key, $_SESSION)) {
-                return null;
-            }
-            return $_SESSION[$key];
-        }*/
-
-        /**
-         * Undocumented function
-         *
          * @return self
          */
         public function deconnected():self {

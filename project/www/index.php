@@ -14,6 +14,7 @@ if($getClass->isKeyExist("ind")) {
 if($ind=="conn") {
   if($postClass->isKeyExist("pseudo") && $postClass->isKeyExist("pass")) {
     $pass = $postClass->getValueSt("pass");
+    $postClass->del("pass");
     $sessionClass->connected($postClass->getTab());
   }
   header('Location: ./');
@@ -64,19 +65,6 @@ if($ind=="conn") {
     </header>
     <section class="firstsection">
         <?php 
-        $a = "test";
-        $test = "bonjour";
-        echo $a . "<br />";
-        echo $$a . "<br />";
-        $tab = ["gtr", "test" => "testing"];
-        $b = "tab";
-        var_dump($b);
-        var_dump($tab);
-        var_dump($$b);
-        $c = "_GET";
-        var_dump($$c);
-        
-        
         if($ind=="login") { ?>
           <h1>Login</h1>
           <form action="./?ind=conn" method="post">

@@ -32,6 +32,9 @@ if (!class_exists('SessionClass')) {
         {
             $nametab = strval($this->nametab);
             global $$nametab;
+            if(empty($$nametab)) {
+                return [];
+            }
             return $$nametab;
         }
 
@@ -57,10 +60,12 @@ if (!class_exists('SessionClass')) {
         public function setValueInt(int $value, int|string|null $key = null):self {
             $nametab = $this->nametab;
             global $$nametab;
-            if(isset($key)) {
+            if(!empty($$nametab) && isset($key)) {
                 $$nametab[$key] = $value;
             }
-            array_push($$nametab, $value);
+            if(!empty($$nametab)) {
+                array_push($$nametab, $value);
+            }
             return $this;
         }
 
@@ -89,8 +94,11 @@ if (!class_exists('SessionClass')) {
         public function setValueSt(string|null $value, int|string|null $key = null):self {
             $nametab = $this->nametab;
             global $$nametab;
-            if(isset($key)) {
+            if(!empty($$nametab) && isset($key)) {
                 $$nametab[$key] = $value;
+            }
+            if(!empty($$nametab)) {
+                array_push($$nametab, $value);
             }
             return $this;
         }
@@ -120,10 +128,12 @@ if (!class_exists('SessionClass')) {
         public function setValueBl(bool $value, int|string|null $key = null):self {
             $nametab = $this->nametab;
             global $$nametab;
-            if(isset($key)) {
+            if(!empty($$nametab) && isset($key)) {
                 $$nametab[$key] = $value;
             }
-            array_push($$nametab, $value);
+            if(!empty($$nametab)) {
+                array_push($$nametab, $value);
+            }
             return $this;
         }
 
@@ -152,10 +162,12 @@ if (!class_exists('SessionClass')) {
         public function setValueFlt(float $value, int|string|null $key = null):self {
             $nametab = $this->nametab;
             global $$nametab;
-            if(isset($key)) {
+            if(!empty($$nametab) && isset($key)) {
                 $$nametab[$key] = $value;
             }
-            array_push($$nametab, $value);
+            if(!empty($$nametab)) {
+                array_push($$nametab, $value);
+            }
             return $this;
         }
 
@@ -172,6 +184,35 @@ if (!class_exists('SessionClass')) {
                 return floatval($$nametab[$key]);
             }
             return 0.0;
+        }
+        
+        /**
+         * Undocumented function
+         *
+         * @return self
+         */
+        public function delAll(): self
+        {
+            $nametab = strval($this->nametab);
+            global $$nametab;
+            $$nametab = [];
+            unset($$nametab);
+            return $this;
+        }
+
+        /**
+         * Undocumented function
+         *
+         * @param integer|string|null $key
+         * @return self
+         */
+        public function del(int|string|null $key): self {
+            $nametab = $this->nametab;
+            global $$nametab;
+            if (isset($key) && !empty($$nametab) && array_key_exists($key, $$nametab)) {
+                unset($$nametab[$key]);
+            }
+            return $this;
         }
         
     }
