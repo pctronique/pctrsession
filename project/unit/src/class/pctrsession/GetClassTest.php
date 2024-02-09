@@ -31,6 +31,8 @@ class GetClassTest extends TestCase
         $this->testGetValueBl();
         $this->testSetValueFlt();
         $this->testGetValueFlt();
+        $this->testSetValueArr();
+        $this->testGetValueArr();
         $this->testDel();
         $this->testDelAll();
     }
@@ -105,6 +107,33 @@ class GetClassTest extends TestCase
             $testFunction = $this->object->getValueSt($i);
             $this->assertNotNull($testFunction);
             $this->assertIsString($testFunction);
+        }
+    }
+
+    public function testSetValueArr():void {
+        foreach (array_string_all() as $value) {
+            $this->object->setValueArr(null, $value);
+            $this->object->setValueArr([], $value);
+            $this->object->setValueArr(array_string_all(), $value);
+        }
+        for ($i=-10; $i < 10; $i++) { 
+            $this->object->setValueArr(null, $i);
+            $this->object->setValueArr([], $i);
+            $this->object->setValueArr(array_string_all(), $i);
+        }
+        $this->assertTrue(true);
+    }
+    
+    public function testGetValueArr():void {
+        foreach (array_string_all() as $value) {
+            $testFunction = $this->object->getValueArr($value);
+            $this->assertNotNull($testFunction);
+            $this->assertIsArray($testFunction);
+        }
+        for ($i=-10; $i < 10; $i++) { 
+            $testFunction = $this->object->getValueArr($i);
+            $this->assertNotNull($testFunction);
+            $this->assertIsArray($testFunction);
         }
     }
 

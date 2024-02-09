@@ -53,6 +53,40 @@ if (!class_exists('SessionClass')) {
         /**
          * Undocumented function
          *
+         * @param array|null $value
+         * @param integer|string|null|null $key
+         * @return self
+         */
+        public function setValueArr(array|null $value, int|string|null $key = null):self {
+            $nametab = $this->nametab;
+            global $$nametab;
+            if(!empty($$nametab) && isset($key)) {
+                $$nametab[$key] = $value;
+            }
+            if(!empty($$nametab)) {
+                array_push($$nametab, $value);
+            }
+            return $this;
+        }
+
+        /**
+         * Undocumented function
+         *
+         * @param integer|string|null $key
+         * @return array|null
+         */
+        public function getValueArr(int|string|null $key):array|null {
+            $nametab = $this->nametab;
+            global $$nametab;
+            if(isset($key) && !empty($$nametab) && array_key_exists($key, $$nametab) && (strtolower(gettype($$nametab[$key])) == "array")) {
+                return $$nametab[$key];
+            }
+            return [];
+        }
+
+        /**
+         * Undocumented function
+         *
          * @param integer $value
          * @param integer|string|null|null $key
          * @return self
