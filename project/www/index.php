@@ -1,15 +1,20 @@
 <?php
 include __DIR__ . "/src/class/pctrsession/SessionClass.php";
+include __DIR__ . "/src/class/pctrsession/PostClass.php";
+include __DIR__ . "/src/class/pctrsession/GetClass.php";
 $sessionClass = new SessionClass();
+$postClass = new PostClass();
+$getClass = new GetClass();
 
 $ind="acc";
-if(!empty($_GET) && array_key_exists("ind", $_GET)) {
-  $ind=$_GET['ind'];
+if($getClass->isKeyExist("ind")) {
+  $ind=$getClass->getValueSt("ind");
 }
 
 if($ind=="conn") {
-  if(!empty($_POST) && !empty($_POST["pseudo"]) && !empty($_POST["pass"])) {
-    $sessionClass->connected(["pseudo" => $_POST["pseudo"]]);
+  if($postClass->isKeyExist("pseudo") && $postClass->isKeyExist("pass")) {
+    $pass = $postClass->getValueSt("pass");
+    $sessionClass->connected($postClass->getTab());
   }
   header('Location: ./');
 } else if($ind=="deconn") {
@@ -58,7 +63,21 @@ if($ind=="conn") {
       </menu>
     </header>
     <section class="firstsection">
-        <?php if($ind=="login") { ?>
+        <?php 
+        $a = "test";
+        $test = "bonjour";
+        echo $a . "<br />";
+        echo $$a . "<br />";
+        $tab = ["gtr", "test" => "testing"];
+        $b = "tab";
+        var_dump($b);
+        var_dump($tab);
+        var_dump($$b);
+        $c = "_GET";
+        var_dump($$c);
+        
+        
+        if($ind=="login") { ?>
           <h1>Login</h1>
           <form action="./?ind=conn" method="post">
             <label for="pseudo">pseudo</label><input type="text" name="pseudo" id="pseudo">

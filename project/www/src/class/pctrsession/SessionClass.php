@@ -7,12 +7,12 @@
 
 if (!class_exists('SessionClass')) {
         
-    include_once dirname(__FILE__) . '/../../lelien-admin/src/repository/UserRepository.php';
+    include_once dirname(__FILE__) . '/TabValues.php';
 
     /**
      * Creation de la class pour la recuperation des informations de l'entreprise
      */
-    class SessionClass {
+    class SessionClass extends TabValues {
 
         private $maxlifetime;
 
@@ -20,6 +20,7 @@ if (!class_exists('SessionClass')) {
          * le constructeur par defaut
          */
         public function __construct(int $maxlifetime = -1) {
+            parent::__construct("_SESSION");
             $this->maxlifetime = -1;
             if($maxlifetime > 0) {
                 $this->maxlifetime = $maxlifetime;
