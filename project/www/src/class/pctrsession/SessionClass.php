@@ -30,7 +30,7 @@ if (!class_exists('SessionClass')) {
                     session_start();
                 } catch (Exception $e) {}
             }
-            if (!empty($_SESSION) && array_key_exists('maxlifetime', $_SESSION) && (time() - $_SESSION['maxlifetime'] > $maxlifetime)) {
+            if ($this->isKeyExist('maxlifetime') && (time() - $this->getValueInt('maxlifetime') > $maxlifetime)) {
                 $this->deconnected();
             }
         }
@@ -49,7 +49,7 @@ if (!class_exists('SessionClass')) {
                 $tab = [$tab];
             }
             foreach ($tab as $value) {
-                if(!array_key_exists($value, $_SESSION)) {
+                if(!$this->isKeyExist($value)) {
                     return false;
                 }
             }
@@ -67,10 +67,29 @@ if (!class_exists('SessionClass')) {
                 return $this;
             }
             if($this->maxlifetime > 0) {
-                $_SESSION['maxlifetime'] = time();
+                $this->setValueInt(time(), 'maxlifetime');
             }
             foreach ($tab as $key => $value) {
-                $_SESSION[$key] = $value;
+                switch (strtolower(gettype($value))) {
+                    case 'array':
+                        $this->setValueArr($value, $key);
+                        break;
+                    case 'integer':
+                        $this->setValueInt($value, $key);
+                        break;
+                    case 'double':
+                        $this->setValueFlt($value, $key);
+                        break;
+                    case 'float':
+                        $this->setValueFlt($value, $key);
+                        break;
+                    case 'boolean':
+                        $this->setValueBl($value, $key);
+                        break;
+                    case 'string':
+                        $this->setValueSt($value, $key);
+                        break;
+                }
             }
             return $this;
         }
@@ -81,10 +100,7 @@ if (!class_exists('SessionClass')) {
          * @return self
          */
         public function deconnected():self {
-            if(!empty($_SESSION)) {
-                unset($_SESSION);
-                session_unset();
-            }
+            $this->delAll();
             session_destroy();
             return $this;
         }

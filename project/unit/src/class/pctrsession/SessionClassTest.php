@@ -21,6 +21,8 @@ class SessionClassTest extends TestCase
     }
 
     private function test():void {
+        $this->testConnected();
+        $this->testIsConnected();
         $this->testGetTab();
         $this->testIsKeyExist();
         $this->testSetValueInt();
@@ -35,6 +37,7 @@ class SessionClassTest extends TestCase
         $this->testGetValueArr();
         $this->testDel();
         $this->testDelAll();
+        $this->testDeconnected();
     }
     
     public function testGetTab(): void {
@@ -201,6 +204,29 @@ class SessionClassTest extends TestCase
         for ($i=-10; $i < 10; $i++) { 
             $this->object->del($i);
         }
+        $this->assertTrue(true);
+    }
+
+    public function testIsConnected():void {
+        foreach (array_string_all() as $value) {
+            $testFunction = $this->object->isConnected($value);
+            $this->assertNotNull($testFunction);
+            $this->assertIsBool($testFunction);
+        }
+        $testFunction = $this->object->isConnected(array_string_all());
+        $this->assertNotNull($testFunction);
+        $this->assertIsBool($testFunction);
+    }
+
+    public function testConnected(): void {
+        $this->object->connected(null);
+        $this->object->connected(array_string_all());
+        $this->assertTrue(true);
+
+    }
+        
+    public function testDeconnected():void {
+        $this->object->deconnected();
         $this->assertTrue(true);
     }
 

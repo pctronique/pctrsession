@@ -1,6 +1,6 @@
 <?php 
 
-if (!class_exists('SessionClass')) {
+if (!class_exists('TabValues')) {
 
     /**
      * Creation de la class pour la recuperation des informations de l'entreprise
@@ -44,10 +44,29 @@ if (!class_exists('SessionClass')) {
          * @param integer|string|null $key
          * @return boolean
          */
-        public function isKeyExist(int|string|null $key): bool {
+        private function pIsKeyExist(int|string|null $key): bool {
             $nametab = $this->nametab;
             global $$nametab;
             return (isset($key) && !empty($$nametab) && array_key_exists($key, $$nametab));
+        }
+
+        /**
+         * Undocumented function
+         *
+         * @param integer|string|array|null $key
+         * @return boolean
+         */
+        public function isKeyExist(int|string|array|null $key): bool {
+            if(!empty($key) && (strtolower(gettype($key)) == "array")) {
+                $isExist = true;
+                foreach ($key as $value) {
+                    if($isExist) {
+                        $isExist = $this->pIsKeyExist($value);
+                    }
+                }
+                return $isExist;
+            }
+            return $this->pIsKeyExist($key);
         }
 
         /**
