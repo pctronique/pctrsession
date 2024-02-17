@@ -20,15 +20,21 @@ if (!class_exists('SessionClass')) {
          * le constructeur par defaut
          */
         public function __construct(int $maxlifetime = -1) {
-            parent::__construct("_SESSION");
-            $this->maxlifetime = -1;
-            if($maxlifetime > 0) {
-                $this->maxlifetime = $maxlifetime;
-            }
             if(empty(session_id())) {
                 try {
                     session_start();
                 } catch (Exception $e) {}
+            }
+            parent::__construct("_SESSION");
+            var_dump(session_id());
+            $this->maxlifetime = -1;
+            var_dump(isset($_SESSION));
+            $nametab = strval("_SESSION");
+            global $$nametab;
+            var_dump(isset($$nametab));
+            //var_dump(isset($this->getTab()));
+            if($maxlifetime > 0) {
+                $this->maxlifetime = $maxlifetime;
             }
             if ($this->isKeyExist('maxlifetime') && (time() - $this->getValueInt('maxlifetime') > $maxlifetime)) {
                 $this->deconnected();
@@ -67,10 +73,12 @@ if (!class_exists('SessionClass')) {
                 return $this;
             }
             if($this->maxlifetime > 0) {
-                $this->setValueInt(time(), 'maxlifetime');
+                $_SESSION['maxlifetime'] = time();
+                //$this->setValueInt(time(), 'maxlifetime');
             }
             foreach ($tab as $key => $value) {
-                switch (strtolower(gettype($value))) {
+                $_SESSION[$key] = $value;
+                /*switch (strtolower(gettype($value))) {
                     case 'array':
                         $this->setValueArr($value, $key);
                         break;
@@ -87,9 +95,10 @@ if (!class_exists('SessionClass')) {
                         $this->setValueBl($value, $key);
                         break;
                     case 'string':
+                        var_dump([$value, $key]);
                         $this->setValueSt($value, $key);
                         break;
-                }
+                }*/
             }
             return $this;
         }

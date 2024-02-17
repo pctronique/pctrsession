@@ -17,10 +17,10 @@ if($ind=="conn") {
     $postClass->del("pass");
     $sessionClass->connected($postClass->getTab());
   }
-  header('Location: ./');
+  //header('Location: ./');
 } else if($ind=="deconn") {
   $sessionClass->deconnected();
-  header('Location: ./');
+  //header('Location: ./');
 }
 ?>
 <!DOCTYPE html>
@@ -65,6 +65,7 @@ if($ind=="conn") {
     </header>
     <section class="firstsection">
         <?php 
+
         if($ind=="login") { ?>
           <h1>Login</h1>
           <form action="./?ind=conn" method="post">
