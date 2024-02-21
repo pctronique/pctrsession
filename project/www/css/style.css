@@ -34,7 +34,7 @@ body {
 
 .firstsection {
     /*margin-top: var(--menu-margin-top);*/
-    margin-top: 51px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
