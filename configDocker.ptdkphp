@@ -4,7 +4,7 @@
 language:php
 extendsFolder:.php
 extendsDisplay:.php
-container:${NAME_PHP_CONTAINER}
+container:${NAME_PROJECT}_php
 #
 # Compile Docker
 #
@@ -13,7 +13,7 @@ composeCompile:#compose# up -d
 #
 # Container (Unit)
 #
-unit_container:${NAME_PHP_CONTAINER}
+unit_container:${NAME_PROJECT}_php
 #
 # Compile (Unit)
 #
@@ -29,38 +29,38 @@ unit_nameXml:nb-phpunit-pctr-log.xml
 #
 unit_srcFolder:project/www
 unit_unitFolder:project/unit
-unit_tmp:projecttmp/tmp/php
+unit_tmp:.dockertmp/tmp/php/
 #
 # Container (Unit)
 #
 unit_projectFolderDocker:/usr/local/apache2
 unit_srcFolderDocker:www
 unit_unitFolderDocker:unit
-unit_tmpDocker:../projecttmp/tmp/php
+unit_tmpDocker:/var/tmp/docker/php/
 #
 # Container (Docs)
 #
-docs_container:${NAME_PHP_CONTAINER}
+docs_container:${NAME_PROJECT}_phpdoc
 #
 # Compile (Docs)
 #
-docs_title:${NAME_DOC}
+docs_title:${NAME_PROJECT}
 docs_containerExec:php
-docs_containerFileAdd:/usr/local/bin/phpdoc
+docs_containerFileAdd:phpdoc
 docs_folders:core/class/
 docs_containerCmdUp:
-docs_containerCmd:#exec# #fileAdd# run --ansi --directory #srcFolder# --target #docsFolder# --cache-folder #tmpFolder# --title #title# --visibility public,protected
+docs_containerCmd:#fileAdd# --directory #srcFolder# --target #docsFolder# --cache-folder #tmpFolder# --title #title# --visibility public,protected
 docs_containerCmdDown:
 #
 # Project (Docs)
 #
-docs_srcFolder:project/www/src/class/pctrsession
+docs_srcFolder:project/www
 docs_docsFolder:project/docs
-docs_tmp:projecttmp/tmp/php
+docs_tmp:.dockertmp/tmp/php
 #
 # Container (Docs)
 #
 docs_projectFolderDocker:/usr/local/apache2
 docs_srcFolderDocker:www
 docs_docsFolderDocker:docs
-docs_tmpDocker:../projecttmp/tmp/php
+docs_tmpDocker:/var/tmp/docker/phpdoc/

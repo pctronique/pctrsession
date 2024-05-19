@@ -31,8 +31,6 @@ if($ind=="conn") {
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/style_media.css" />
-    <link rel="stylesheet" href="./css/tabtest.css" />
-    <link rel="stylesheet" href="./css/pathtest.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
