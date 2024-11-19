@@ -26,13 +26,9 @@ if (!class_exists('SessionClass')) {
                 } catch (Exception $e) {}
             }
             parent::__construct("_SESSION");
-            var_dump(session_id());
             $this->maxlifetime = -1;
-            var_dump(isset($_SESSION));
             $nametab = strval("_SESSION");
             global $$nametab;
-            var_dump(isset($$nametab));
-            //var_dump(isset($this->getTab()));
             if($maxlifetime > 0) {
                 $this->maxlifetime = $maxlifetime;
             }
@@ -78,27 +74,6 @@ if (!class_exists('SessionClass')) {
             }
             foreach ($tab as $key => $value) {
                 $_SESSION[$key] = $value;
-                /*switch (strtolower(gettype($value))) {
-                    case 'array':
-                        $this->setValueArr($value, $key);
-                        break;
-                    case 'integer':
-                        $this->setValueInt($value, $key);
-                        break;
-                    case 'double':
-                        $this->setValueFlt($value, $key);
-                        break;
-                    case 'float':
-                        $this->setValueFlt($value, $key);
-                        break;
-                    case 'boolean':
-                        $this->setValueBl($value, $key);
-                        break;
-                    case 'string':
-                        var_dump([$value, $key]);
-                        $this->setValueSt($value, $key);
-                        break;
-                }*/
             }
             return $this;
         }

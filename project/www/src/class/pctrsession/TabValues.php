@@ -147,8 +147,6 @@ if (!class_exists('TabValues')) {
         public function setValueSt(string|null $value, int|string|null $key = null):self {
             $nametab = $this->nametab;
             global $$nametab;
-            var_dump($$nametab);
-            var_dump(isset($$nametab));
             if(!empty($$nametab) && isset($key)) {
                 $$nametab[$key] = $value;
             }
@@ -204,7 +202,7 @@ if (!class_exists('TabValues')) {
             if(isset($key) && !empty($$nametab) && array_key_exists($key, $$nametab)) {
                 return boolval($$nametab[$key]);
             }
-            return "";
+            return false;
         }
 
         /**
