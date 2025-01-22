@@ -11,6 +11,8 @@ if (!class_exists('SessionClass')) {
 
     /**
      * Creation de la class pour la recuperation des informations de l'entreprise
+     * @version 1.1.0
+     * @author pctronique (NAULOT ludovic)
      */
     class SessionClass extends TabValues {
 
@@ -47,7 +49,7 @@ if (!class_exists('SessionClass')) {
             if(empty($_SESSION) || empty($tab)) {
                 return false;
             }
-            if(strtolower(gettype($tab)) == "string") {
+            if(strtolower(gettype($tab)) === "string") {
                 $tab = [$tab];
             }
             foreach ($tab as $value) {
