@@ -11,6 +11,8 @@ if (!class_exists('PostClass')) {
 
     /**
      * Creation de la class pour la recuperation des informations de l'entreprise
+     * @version 1.1.0
+     * @author pctronique (NAULOT ludovic)
      */
     class PostClass extends TabValues {
 
