@@ -12,9 +12,9 @@ if (!class_exists('TabValues')) {
         private string $nametab;
 
         /**
-         * Undocumented function
+         * le constructeur par reference avec un tableau de base a entrer
          *
-         * @param array $tab
+         * @param array $tab tableau de base
          */
         public function __construct(string|null $nametab = null) {
             $this->nametab = $nametab;
@@ -26,9 +26,9 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Get the value of tab
+         * Recupere le tableau.
          *
-         * @return array
+         * @return array Recupere le tableau.
          */
         public function getTab(): array
         {
@@ -256,9 +256,9 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Supprimer une clee (int ou string) et sa valeur du tableau.
          *
-         * @param integer|string|null $key
+         * @param integer|string|null $key une clee (int ou string)
          * @return self
          */
         public function del(int|string|null $key): self {

@@ -17,6 +17,7 @@ class SessionClassTest extends TestCase
 
     protected function setUp(): void {
         $this->object = new SessionClass();
+        $this->object = new SessionClass();
         $this->test();
     }
 

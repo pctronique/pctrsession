@@ -40,10 +40,10 @@ if (!class_exists('SessionClass')) {
         }
 
         /**
-         * Undocumented function
+         * Verifier a patir d'une valeur de clee string ou un tableau de clee en string, qu'on est bien connecte.
          *
-         * @param array|string|null $tab
-         * @return boolean
+         * @param array|string|null $tab clee string ou un tableau de clee en string
+         * @return boolean retourne vrai si on est connecte
          */
         public function isConnected(array|string|null $tab = null):bool {
             if(empty($_SESSION) || empty($tab)) {
@@ -61,9 +61,9 @@ if (!class_exists('SessionClass')) {
         }
 
         /**
-         * Undocumented function
+         * Recuperer les valeurs d'un tableau qui va servire a la connexion de la section.
          *
-         * @param array|null $tab
+         * @param array|null $tab le tableau avec les valeurs de la connexion.
          * @return self
          */
         public function connected(array|null $tab = null): self {
@@ -81,7 +81,7 @@ if (!class_exists('SessionClass')) {
         }
 
         /**
-         * Undocumented function
+         * Se deconnecter de la section.
          *
          * @return self
          */
