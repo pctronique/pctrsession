@@ -1,16 +1,11 @@
 <?php 
-
-/**
- * Pour lire les informations de l'entreprise.
- * numero d'error de la classe '1003XXXXXX'
- */
-
+// verifier qu'on n'a pas deja creer la classe
 if (!class_exists('PostClass')) {
         
     include_once dirname(__FILE__) . '/TabValues.php';
 
     /**
-     * Creation de la class pour la recuperation des informations de l'entreprise
+     * Travailler avec la table POST
      * @version 1.1.0
      * @author pctronique (NAULOT ludovic)
      */

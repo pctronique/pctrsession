@@ -1,16 +1,11 @@
 <?php 
-
-/**
- * Pour lire les informations de l'entreprise.
- * numero d'error de la classe '1003XXXXXX'
- */
-
+// verifier qu'on n'a pas deja creer la classe
 if (!class_exists('SessionClass')) {
         
     include_once dirname(__FILE__) . '/TabValues.php';
 
     /**
-     * Creation de la class pour la recuperation des informations de l'entreprise
+     * Travailler avec la table SESSION
      * @version 1.1.0
      * @author pctronique (NAULOT ludovic)
      */
@@ -40,10 +35,10 @@ if (!class_exists('SessionClass')) {
         }
 
         /**
-         * Undocumented function
+         * Verifier a patir d'une valeur de clee string ou un tableau de clee en string, qu'on est bien connecte.
          *
-         * @param array|string|null $tab
-         * @return boolean
+         * @param array|string|null $tab clee string ou un tableau de clee en string
+         * @return boolean retourne vrai si on est connecte
          */
         public function isConnected(array|string|null $tab = null):bool {
             if(empty($_SESSION) || empty($tab)) {
@@ -61,9 +56,9 @@ if (!class_exists('SessionClass')) {
         }
 
         /**
-         * Undocumented function
+         * Recuperer les valeurs d'un tableau qui va servire a la connexion de la section.
          *
-         * @param array|null $tab
+         * @param array|null $tab le tableau avec les valeurs de la connexion.
          * @return self
          */
         public function connected(array|null $tab = null): self {
@@ -81,7 +76,7 @@ if (!class_exists('SessionClass')) {
         }
 
         /**
-         * Undocumented function
+         * Se deconnecter de la section.
          *
          * @return self
          */
