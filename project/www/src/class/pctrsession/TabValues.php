@@ -1,9 +1,9 @@
 <?php 
-
+// verifier qu'on n'a pas deja creer la classe
 if (!class_exists('TabValues')) {
 
     /**
-     * Creation de la class pour la recuperation des informations de l'entreprise
+     * Travailler avec une table
      * @version 1.1.0
      * @author pctronique (NAULOT ludovic)
      */
@@ -41,10 +41,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Verifier l'existence d'une clef (sans tableau de clef) dans le tableau.
          *
-         * @param integer|string|null $key
-         * @return boolean
+         * @param integer|string|null $key la clef a verifier
+         * @return boolean vrai si la clef a ete trouve
          */
         private function pIsKeyExist(int|string|null $key): bool {
             $nametab = $this->nametab;
@@ -53,10 +53,11 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Verifier l'existence d'une clef dans le tableau.
+         * Il est possible d'entrer un tableu de clef a verifier.
          *
-         * @param integer|string|array|null $key
-         * @return boolean
+         * @param integer|string|array|null $key la clef a verifier
+         * @return boolean vrai si la clef a ete trouve
          */
         public function isKeyExist(int|string|array|null $key): bool {
             if(!empty($key) && (strtolower(gettype($key)) == "array")) {
@@ -72,10 +73,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Entrer un tableau de valeur avec une clef.
          *
-         * @param array|null $value
-         * @param integer|string|null|null $key
+         * @param array|null $value tableau de valeur
+         * @param integer|string|null|null $key la clef
          * @return self
          */
         public function setValueArr(array|null $value, int|string|null $key = null):self {
@@ -91,10 +92,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Recupere un tableau de valeur a partir d'une clef
          *
-         * @param integer|string|null $key
-         * @return array|null
+         * @param integer|string|null $key la clef
+         * @return array|null le tableau de valeur
          */
         public function getValueArr(int|string|null $key):array|null {
             $nametab = $this->nametab;
@@ -106,10 +107,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Entrer un nombre avec une clef.
          *
-         * @param integer $value
-         * @param integer|string|null|null $key
+         * @param integer $value un nombre
+         * @param integer|string|null|null $key la clef
          * @return self
          */
         public function setValueInt(int $value, int|string|null $key = null):self {
@@ -125,10 +126,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Recupere un nombre a partir d'une clef
          *
-         * @param integer|string|null $key
-         * @return integer
+         * @param integer|string|null $key la clef
+         * @return integer le nombre
          */
         public function getValueInt(int|string|null $key):int {
             $nametab = $this->nametab;
@@ -140,10 +141,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Entrer un texte avec une clef.
          *
-         * @param string|null $value
-         * @param integer|string|null|null $key
+         * @param string|null $value un texte
+         * @param integer|string|null|null $key la clef
          * @return self
          */
         public function setValueSt(string|null $value, int|string|null $key = null):self {
@@ -159,10 +160,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Recupere un texte a partir d'une clef
          *
-         * @param integer|string|null $key
-         * @return string|null
+         * @param integer|string|null $key la clef
+         * @return string|null le texte
          */
         public function getValueSt(int|string|null $key):string|null {
             $nametab = $this->nametab;
@@ -174,10 +175,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Entrer un boolean avec une clef.
          *
-         * @param boolean $value
-         * @param integer|string|null|null $key
+         * @param boolean $value un boolean
+         * @param integer|string|null|null $key la clef
          * @return self
          */
         public function setValueBl(bool $value, int|string|null $key = null):self {
@@ -193,10 +194,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Recupere un boolean a partir d'une clef
          *
-         * @param integer|string|null $key
-         * @return boolean
+         * @param integer|string|null $key la clef
+         * @return boolean le boolean
          */
         public function getValueBl(int|string|null $key):bool {
             $nametab = $this->nametab;
@@ -208,10 +209,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Entrer un nombre a virgule avec une clef.
          *
-         * @param float $value
-         * @param integer|string|null|null $key
+         * @param float $value un nombre a virgule
+         * @param integer|string|null|null $key la clef
          * @return self
          */
         public function setValueFlt(float $value, int|string|null $key = null):self {
@@ -227,10 +228,10 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Undocumented function
+         * Recupere un nombre a virgule a partir d'une clef
          *
-         * @param integer|string|null $key
-         * @return float
+         * @param integer|string|null $key la clef
+         * @return float le nombre a virgule
          */
         public function getValueFlt(int|string|null $key):float {
             $nametab = $this->nametab;
@@ -242,7 +243,7 @@ if (!class_exists('TabValues')) {
         }
         
         /**
-         * Undocumented function
+         * Vide le tableau en totalite
          *
          * @return self
          */
@@ -256,9 +257,9 @@ if (!class_exists('TabValues')) {
         }
 
         /**
-         * Supprimer une clee (int ou string) et sa valeur du tableau.
+         * Supprimer une clef (int ou string) et sa valeur du tableau.
          *
-         * @param integer|string|null $key une clee (int ou string)
+         * @param integer|string|null $key une clef
          * @return self
          */
         public function del(int|string|null $key): self {

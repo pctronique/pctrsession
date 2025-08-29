@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\GetClass",
             "name": "GetClass",
-            "summary": "Creation\u0020de\u0020la\u0020class\u0020pour\u0020la\u0020recuperation\u0020des\u0020informations\u0020de\u0020l\u0027entreprise",
+            "summary": "Travailler\u0020avec\u0020la\u0020table\u0020GET",
             "url": "classes/GetClass.html"
         },                {
             "fqsen": "\\GetClass\u003A\u003A__construct\u0028\u0029",
@@ -13,7 +13,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\PostClass",
             "name": "PostClass",
-            "summary": "Creation\u0020de\u0020la\u0020class\u0020pour\u0020la\u0020recuperation\u0020des\u0020informations\u0020de\u0020l\u0027entreprise",
+            "summary": "Travailler\u0020avec\u0020la\u0020table\u0020POST",
             "url": "classes/PostClass.html"
         },                {
             "fqsen": "\\PostClass\u003A\u003A__construct\u0028\u0029",
@@ -23,7 +23,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SessionClass",
             "name": "SessionClass",
-            "summary": "Creation\u0020de\u0020la\u0020class\u0020pour\u0020la\u0020recuperation\u0020des\u0020informations\u0020de\u0020l\u0027entreprise",
+            "summary": "Travailler\u0020avec\u0020la\u0020table\u0020SESSION",
             "url": "classes/SessionClass.html"
         },                {
             "fqsen": "\\SessionClass\u003A\u003A__construct\u0028\u0029",
@@ -33,97 +33,97 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SessionClass\u003A\u003AisConnected\u0028\u0029",
             "name": "isConnected",
-            "summary": "Undocumented\u0020function",
+            "summary": "Verifier\u0020a\u0020patir\u0020d\u0027une\u0020valeur\u0020de\u0020clee\u0020string\u0020ou\u0020un\u0020tableau\u0020de\u0020clee\u0020en\u0020string,\u0020qu\u0027on\u0020est\u0020bien\u0020connecte.",
             "url": "classes/SessionClass.html#method_isConnected"
         },                {
             "fqsen": "\\SessionClass\u003A\u003Aconnected\u0028\u0029",
             "name": "connected",
-            "summary": "Undocumented\u0020function",
+            "summary": "Recuperer\u0020les\u0020valeurs\u0020d\u0027un\u0020tableau\u0020qui\u0020va\u0020servire\u0020a\u0020la\u0020connexion\u0020de\u0020la\u0020section.",
             "url": "classes/SessionClass.html#method_connected"
         },                {
             "fqsen": "\\SessionClass\u003A\u003Adeconnected\u0028\u0029",
             "name": "deconnected",
-            "summary": "Undocumented\u0020function",
+            "summary": "Se\u0020deconnecter\u0020de\u0020la\u0020section.",
             "url": "classes/SessionClass.html#method_deconnected"
         },                {
             "fqsen": "\\TabValues",
             "name": "TabValues",
-            "summary": "Creation\u0020de\u0020la\u0020class\u0020pour\u0020la\u0020recuperation\u0020des\u0020informations\u0020de\u0020l\u0027entreprise",
+            "summary": "Travailler\u0020avec\u0020une\u0020table",
             "url": "classes/TabValues.html"
         },                {
             "fqsen": "\\TabValues\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Undocumented\u0020function",
+            "summary": "le\u0020constructeur\u0020par\u0020reference\u0020avec\u0020un\u0020tableau\u0020de\u0020base\u0020a\u0020entrer",
             "url": "classes/TabValues.html#method___construct"
         },                {
             "fqsen": "\\TabValues\u003A\u003AgetTab\u0028\u0029",
             "name": "getTab",
-            "summary": "Get\u0020the\u0020value\u0020of\u0020tab",
+            "summary": "Recupere\u0020le\u0020tableau.",
             "url": "classes/TabValues.html#method_getTab"
         },                {
             "fqsen": "\\TabValues\u003A\u003AisKeyExist\u0028\u0029",
             "name": "isKeyExist",
-            "summary": "Undocumented\u0020function",
+            "summary": "Verifier\u0020l\u0027existence\u0020d\u0027une\u0020clef\u0020dans\u0020le\u0020tableau.",
             "url": "classes/TabValues.html#method_isKeyExist"
         },                {
             "fqsen": "\\TabValues\u003A\u003AsetValueArr\u0028\u0029",
             "name": "setValueArr",
-            "summary": "Undocumented\u0020function",
+            "summary": "Entrer\u0020un\u0020tableau\u0020de\u0020valeur\u0020avec\u0020une\u0020clef.",
             "url": "classes/TabValues.html#method_setValueArr"
         },                {
             "fqsen": "\\TabValues\u003A\u003AgetValueArr\u0028\u0029",
             "name": "getValueArr",
-            "summary": "Undocumented\u0020function",
+            "summary": "Recupere\u0020un\u0020tableau\u0020de\u0020valeur\u0020a\u0020partir\u0020d\u0027une\u0020clef",
             "url": "classes/TabValues.html#method_getValueArr"
         },                {
             "fqsen": "\\TabValues\u003A\u003AsetValueInt\u0028\u0029",
             "name": "setValueInt",
-            "summary": "Undocumented\u0020function",
+            "summary": "Entrer\u0020un\u0020nombre\u0020avec\u0020une\u0020clef.",
             "url": "classes/TabValues.html#method_setValueInt"
         },                {
             "fqsen": "\\TabValues\u003A\u003AgetValueInt\u0028\u0029",
             "name": "getValueInt",
-            "summary": "Undocumented\u0020function",
+            "summary": "Recupere\u0020un\u0020nombre\u0020a\u0020partir\u0020d\u0027une\u0020clef",
             "url": "classes/TabValues.html#method_getValueInt"
         },                {
             "fqsen": "\\TabValues\u003A\u003AsetValueSt\u0028\u0029",
             "name": "setValueSt",
-            "summary": "Undocumented\u0020function",
+            "summary": "Entrer\u0020un\u0020texte\u0020avec\u0020une\u0020clef.",
             "url": "classes/TabValues.html#method_setValueSt"
         },                {
             "fqsen": "\\TabValues\u003A\u003AgetValueSt\u0028\u0029",
             "name": "getValueSt",
-            "summary": "Undocumented\u0020function",
+            "summary": "Recupere\u0020un\u0020texte\u0020a\u0020partir\u0020d\u0027une\u0020clef",
             "url": "classes/TabValues.html#method_getValueSt"
         },                {
             "fqsen": "\\TabValues\u003A\u003AsetValueBl\u0028\u0029",
             "name": "setValueBl",
-            "summary": "Undocumented\u0020function",
+            "summary": "Entrer\u0020un\u0020boolean\u0020avec\u0020une\u0020clef.",
             "url": "classes/TabValues.html#method_setValueBl"
         },                {
             "fqsen": "\\TabValues\u003A\u003AgetValueBl\u0028\u0029",
             "name": "getValueBl",
-            "summary": "Undocumented\u0020function",
+            "summary": "Recupere\u0020un\u0020boolean\u0020a\u0020partir\u0020d\u0027une\u0020clef",
             "url": "classes/TabValues.html#method_getValueBl"
         },                {
             "fqsen": "\\TabValues\u003A\u003AsetValueFlt\u0028\u0029",
             "name": "setValueFlt",
-            "summary": "Undocumented\u0020function",
+            "summary": "Entrer\u0020un\u0020nombre\u0020a\u0020virgule\u0020avec\u0020une\u0020clef.",
             "url": "classes/TabValues.html#method_setValueFlt"
         },                {
             "fqsen": "\\TabValues\u003A\u003AgetValueFlt\u0028\u0029",
             "name": "getValueFlt",
-            "summary": "Undocumented\u0020function",
+            "summary": "Recupere\u0020un\u0020nombre\u0020a\u0020virgule\u0020a\u0020partir\u0020d\u0027une\u0020clef",
             "url": "classes/TabValues.html#method_getValueFlt"
         },                {
             "fqsen": "\\TabValues\u003A\u003AdelAll\u0028\u0029",
             "name": "delAll",
-            "summary": "Undocumented\u0020function",
+            "summary": "Vide\u0020le\u0020tableau\u0020en\u0020totalite",
             "url": "classes/TabValues.html#method_delAll"
         },                {
             "fqsen": "\\TabValues\u003A\u003Adel\u0028\u0029",
             "name": "del",
-            "summary": "Undocumented\u0020function",
+            "summary": "Supprimer\u0020une\u0020clef\u0020\u0028int\u0020ou\u0020string\u0029\u0020et\u0020sa\u0020valeur\u0020du\u0020tableau.",
             "url": "classes/TabValues.html#method_del"
         },                {
             "fqsen": "\\",
