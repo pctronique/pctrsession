@@ -4,6 +4,8 @@ Merci de visiter le wiki (https://github.com/pctronique/pctrsession/wiki).
 
 Pour simplifier l'utilisation des tables GET, POST et SESSION.
 
+Permet de se protéger contre les erreurs d'ouverture de session avec l'utilisation de "session_start()" en utilisent le constructeur qui active la "session_start()" quand celle-ci n'a pas été ouverte.
+
 Pas besoin de base de données, pas de configuration pour l'utiliser.
 
 Version PHP minimum : 8.
