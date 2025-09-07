@@ -2,7 +2,7 @@
 // verifier qu'on n'a pas deja creer la classe
 if (!class_exists('GetClass')) {
         
-    include_once dirname(__FILE__) . '/TabValues.php';
+    require_once dirname(__FILE__) . '/TabValues.php';
 
     /**
      * Travailler avec la table GET
